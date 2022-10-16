@@ -321,3 +321,9 @@ number minus(number x, number y)
     result = plus(x, y);
     return (result);
 }
+
+number asterisk(number x, number y)
+{
+    number result;
+    if (x.sign)
+}
