@@ -309,26 +309,3 @@ number plus(number x, number y)
     }
     return (result);
 }
-
-number minus(number x, number y)
-{
-    number result;
-    
-    if (y.sign < 0)
-        y.sign = 1;
-    else
-        y.sign = -1;
-    result = plus(x, y);
-    return (result);
-}
-
-number asterisk(number x, number y)
-{
-    number result;
-
-    result.sign = 1;
-    if (x.sign * y.sign == -1)
-        result.sign = -1;
-    result.total_size = x.total_size + y.total_size;
-    
-}
