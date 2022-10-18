@@ -329,5 +329,5 @@ number asterisk(number x, number y)
     result.sign = 1;
     if (x.sign * y.sign == -1)
         result.sign = -1;
-    
+    result.total_size = 
 }
