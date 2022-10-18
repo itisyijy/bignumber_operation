@@ -9,6 +9,4 @@ number minus(number x, number y);
 number asterisk(number x, number y);
 number slash(number x, number y);
 
-number add(number x, number y);
-
 #endif
