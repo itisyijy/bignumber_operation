@@ -325,5 +325,9 @@ number minus(number x, number y)
 number asterisk(number x, number y)
 {
     number result;
-    if (x.sign)
+
+    result.sign = 1;
+    if (x.sign * y.sign == -1)
+        result.sign = -1;
+    
 }
