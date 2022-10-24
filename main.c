@@ -61,6 +61,9 @@ int main(int argc, char *argv[])
         int i;
         int j;
 
+        // input validity considertaion
+        // string or something that are not a digit.
+        
         number tx = setNumber(argv[1]);
         number ty = setNumber(argv[3]);
         number x;
