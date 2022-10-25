@@ -7,6 +7,35 @@
 
 #define max(a,b) (((a) > (b)) ? (a) : (b))
 
+bool checkNumber(char *operand)
+{
+    int i = 0;
+    int pointCount = 0;
+
+    if (operand[i] == '-')
+        i++;
+    while (operand[i] != '\0')
+    {
+        if (operand[i] < '0' || operand[i] > '9')
+        {
+            if (operand[i] == '.' && pointCount == 0)
+                pointCount++;
+            else
+                return (false);
+        }
+        i++;
+    }
+    return (true);
+}
+
+bool checkOperator(char *operand)
+{
+    if (operand[0] == '+' || operand[0] == '-' || operand[0] == '*' || operand[0] == '/')
+        if (operand[1] == '\0')
+            return (true);
+    return (false);
+}
+
 number setNumber(char *operand)
 {
     int i = 0;
@@ -63,7 +92,18 @@ int main(int argc, char *argv[])
 
         // input validity considertaion
         // string or something that are not a digit.
+        if (checkNumber(argv[1]) == false || checkNumber(argv[3]) == false || checkOperator(argv[2]) == false)
+        {
+            //Error Message
+            if (checkNumber(argv[1]) == false || checkNumber(argv[3]) == false)
+                printf("Invalid Format of Operand Input.\n");
+            if (checkOperator(argv[2]) == false)
+                printf("Invalid Format of Operator Input.\n");
+            printf("Please check your input.\n");
+            return (0);
+        }
         
+
         number tx = setNumber(argv[1]);
         number ty = setNumber(argv[3]);
         number x;
