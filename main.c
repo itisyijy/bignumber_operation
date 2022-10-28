@@ -139,9 +139,9 @@ int main(int argc, char *argv[])
             result = plus(x, y);
         else if (argv[2][0] == '-' && argv[2][1] == '\0')
             result = minus(x, y);
-        /*
         else if (argv[2][0] == '*' && argv[2][1] == '\0')
             result = asterisk(x, y);
+        /*
         else if (argv[2][0] == '/' && argv[2][1] == '\0')
             result = slash(x, y);
         */
