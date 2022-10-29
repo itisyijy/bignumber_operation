@@ -143,6 +143,8 @@ int isZero(number x)
 
 void print_num(number num)
 {
+    if (num.sign == -1)
+        printf("-");
     int i = 0;
     while (num.total_digit[i] == 0 && num.decimal_point - i - 1 >= 0)
         i++;

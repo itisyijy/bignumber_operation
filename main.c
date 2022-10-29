@@ -67,28 +67,11 @@ int main(int argc, char *argv[])
             return (0);
         }
 
-
-        for (int i = 0; i < x.total_size; i++)
-        {
-            printf("%d ", x.total_digit[i]);
-        }
-        printf("\ndecimal point = %d", x.decimal_point);
-        printf("\nsign = %d\n", x.sign);
-
-        for (int i = 0; i < y.total_size; i++)
-        {
-            printf("%d ", y.total_digit[i]);
-        }
-        printf("\ndecimal point = %d", y.decimal_point);
-        printf("\nsign = %d\n", y.sign);
-
-        for (int i = 0; i < result.total_size; i++)
-        {
-            printf("%d ", result.total_digit[i]);
-        }
-        printf("\ndecimal point = %d", result.decimal_point);
-        printf("\nsign = %d\n", result.sign);
-        
+        print_num(x);
+        printf(" %c ", argv[2][0]);
+        print_num(y);
+        printf(" = ");
+        print_num(result);
     }
     else
     {
