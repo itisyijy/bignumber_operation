@@ -59,7 +59,9 @@ number slash(number x, number y)
     result.decimal_point = i;
 
     // 소수부
-    while (i < RANGE)
+    x = minus(x, y);
+    y = refresh(y, x);
+    while (i < RANGE && isZero(x) == false)
     {
         count = 0;
         shift(x.total_digit, x.total_size);
@@ -76,7 +78,7 @@ number slash(number x, number y)
             y = ty;
         }
         // count를 total_digit[i]에 넣어
-        result.total_digit[i] = count;
+        result.total_digit[i] = count % 10;
         i++;
     }
     return (result);
