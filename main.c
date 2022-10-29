@@ -23,7 +23,6 @@ int main(int argc, char *argv[])
             return (0);
         }
         
-
         number tx = setNumber(argv[1]);
         number ty = setNumber(argv[3]);
         number x;
@@ -32,8 +31,6 @@ int main(int argc, char *argv[])
 
         alignNumber(&x, tx, ty);
         x.sign = tx.sign;
-        for (int i = 0; i < x.total_size; i++)
-            x.total_digit[i] = 0;
         i = x.decimal_point - tx.decimal_point;
         j = 0;
         while (j < tx.total_size)
@@ -44,8 +41,6 @@ int main(int argc, char *argv[])
         }
         alignNumber(&y, tx, ty);
         y.sign = ty.sign;
-        for (int i = 0; i < y.total_size; i++)
-            y.total_digit[i] = 0;
         i = y.decimal_point - ty.decimal_point;
         j = 0;
         while (j < ty.total_size)
@@ -61,11 +56,11 @@ int main(int argc, char *argv[])
             result = minus(x, y);
         else if (argv[2][0] == '*' && argv[2][1] == '\0')
             result = asterisk(x, y);
-        /*
+/*
         else if (argv[2][0] == '/' && argv[2][1] == '\0')
             result = slash(x, y);
-        */
-        
+*/
+
         for (int i = 0; i < x.total_size; i++)
         {
             printf("%d ", x.total_digit[i]);

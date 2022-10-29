@@ -9,10 +9,8 @@ number plus(number x, number y)
     int abs_size = abs_compare(x.total_digit, y.total_digit, x.total_size);
   
     result.total_size = x.total_size + 1;
-    result.total_digit = (int *)malloc(sizeof(int) * (x.total_size + 1));
+    result.total_digit = (int *)calloc((x.total_size + 1), sizeof(int));
     result.decimal_point = x.decimal_point + 1;
-    for (int k = 0; k < result.total_size; k++)
-        result.total_digit[k] = 0;
     if (abs_size > 0) // x의 절댓값이 더 크다
     {
         if (x.sign > 0) // x가 양수다

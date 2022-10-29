@@ -76,7 +76,11 @@ void alignNumber(number *n, number tx, number ty)
 {
     n->total_size  = max(tx.decimal_point, ty.decimal_point) + max(tx.total_size - tx.decimal_point, ty.total_size - ty.decimal_point);
     n->decimal_point = max(tx.decimal_point, ty.decimal_point);
-    n->total_digit = (int *)malloc(sizeof(int) * n->total_size);
+    
+    n->total_size++;
+    n->decimal_point++;
+    
+    n->total_digit = (int *)calloc(n->total_size, sizeof(int));
 }
 
 int abs_compare(int *one, int *two, int size)
