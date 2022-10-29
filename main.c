@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
         print_num(y);
         printf(" = ");
         print_num(result);
+        printf("\n");
     }
     else
     {

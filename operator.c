@@ -74,8 +74,8 @@ void alignNumber(number *n, number tx, number ty)
     n->total_size  = max(tx.decimal_point, ty.decimal_point) + max(tx.total_size - tx.decimal_point, ty.total_size - ty.decimal_point);
     n->decimal_point = max(tx.decimal_point, ty.decimal_point);
     
-    n->total_size++;
-    n->decimal_point++;
+    //n->total_size++;
+    //n->decimal_point++;
     
     n->total_digit = (int *)calloc(n->total_size, sizeof(int));
 }
@@ -143,16 +143,12 @@ int isZero(number x)
 
 void print_num(number num)
 {
-    if (num.sign == -1)
-        printf("-");
     int i = 0;
-    while (num.total_digit[i] == 0 && num.decimal_point - i - 1 >= 0)
-        i++;
     while (i < num.total_size)
     {
-        printf("%d", num.total_digit[i]);
-        if (i == num.decimal_point - 1 && i != num.total_size - 1)
+        if (i == num.decimal_point)
             printf(".");
+        printf("%d", num.total_digit[i]);
         i++;
     }
 }
