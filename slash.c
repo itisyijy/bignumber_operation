@@ -59,9 +59,12 @@ number slash(number x, number y)
     result.decimal_point = i;
 
     // 소수부
-    x = minus(x, y);
-    y = refresh(y, x);
-    while (i < RANGE && isZero(x) == false)
+    if (minus(x, y).sign == 1)
+    {
+        x = minus(x, y);
+        y = refresh(y, x);
+    }
+    while (i < RANGE)
     {
         count = 0;
         shift(x.total_digit, x.total_size);

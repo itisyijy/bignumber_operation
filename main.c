@@ -47,6 +47,11 @@ int main(int argc, char *argv[])
             j++;
         }
 
+        print_num(x);
+        printf(" %c ", argv[2][0]);
+        print_num(y);
+        printf(" = ");
+
         if (argv[2][0] == '+' && argv[2][1] == '\0')
             result = plus(x, y);
         else if (argv[2][0] == '-' && argv[2][1] == '\0')
@@ -66,11 +71,6 @@ int main(int argc, char *argv[])
             printf("Quotient Overflow Occurs.\n");
             return (0);
         }
-
-        print_num(x);
-        printf(" %c ", argv[2][0]);
-        print_num(y);
-        printf(" = ");
         print_num(result);
         printf("\n");
     }
