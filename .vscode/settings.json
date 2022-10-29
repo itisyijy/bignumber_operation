@@ -6,6 +6,7 @@
         "number.h": "c",
         "operator.h": "c",
         "string.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "float.h": "c"
     }
 }

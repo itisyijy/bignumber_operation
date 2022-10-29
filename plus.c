@@ -1,14 +1,6 @@
 #include <stdlib.h>
 #include "operator.h"
 
-int abs_compare(int *one, int *two, int size)
-{
-    int i = 0;
-    while (one[i] == two[i] && i < size - 1)
-        i++;
-    return (one[i] - two[i]);
-}
-
 number plus(number x, number y)
 {
     number result;
