@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "operator.h"
 
 number minus(number x, number y)

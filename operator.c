@@ -1,7 +1,4 @@
-#include <stdlib.h>
 #include "operator.h"
-
-#define max(a,b) (((a) > (b)) ? (a) : (b))
 
 bool checkNumber(char *operand)
 {
@@ -112,4 +109,48 @@ void shift(int* number, int size)
 		number[i] = 0;
 		i++;
 	}
+}
+
+number refresh(number y, number x)
+{
+    number result;
+    alignNumber(&result, x, y);
+    result.sign = y.sign;
+    int dp = result.decimal_point - y.decimal_point;
+    int idx = 0;
+    while (idx < y.total_size)
+    {
+        result.total_digit[dp] = y.total_digit[idx];
+        dp++;
+        idx++;
+    }
+    return (result);
+}
+
+int isZero(number x)
+{
+    int i = 0;
+    while (i < x.total_size)
+    {
+        if (x.total_digit[i] != 0)
+            break;
+        i++;
+    }
+    if (i == x.total_size)
+        return (1);
+    return (0);
+}
+
+void print_num(number num)
+{
+    int i = 0;
+    while (num.total_digit[i] == 0 && num.decimal_point - i - 1 >= 0)
+        i++;
+    while (i < num.total_size)
+    {
+        printf("%d", num.total_digit[i]);
+        if (i == num.decimal_point - 1 && i != num.total_size - 1)
+            printf(".");
+        i++;
+    }
 }

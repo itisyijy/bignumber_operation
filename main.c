@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
 #include "operator.h"
 
 int main(int argc, char *argv[])
@@ -56,6 +53,8 @@ int main(int argc, char *argv[])
             result = minus(x, y);
         else if (argv[2][0] == '*' && argv[2][1] == '\0')
             result = asterisk(x, y);
+        else if (argv[2][0] == '/' && argv[2][1] == '\0')
+            result = slash(x, y);
         
         if (result.sign == 0)
         {
@@ -67,10 +66,7 @@ int main(int argc, char *argv[])
             printf("Quotient Overflow Occurs.\n");
             return (0);
         }
-/*
-        else if (argv[2][0] == '/' && argv[2][1] == '\0')
-            result = slash(x, y);
-*/
+
 
         for (int i = 0; i < x.total_size; i++)
         {

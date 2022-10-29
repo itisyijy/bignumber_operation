@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "operator.h"
 
 number plus(number x, number y)
