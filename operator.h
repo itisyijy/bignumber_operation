@@ -11,6 +11,8 @@ bool checkNumber(char *operand);
 bool checkOperator(char *operand);
 number setNumber(char *operand);
 
+unsigned long power_ul(unsigned long x, unsigned long y);
+
 number plus(number x, number y);
 number minus(number x, number y);
 number asterisk(number x, number y);

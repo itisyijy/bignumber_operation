@@ -90,3 +90,14 @@ int abs_compare(int *one, int *two, int size)
         i++;
     return (one[i] - two[i]);
 }
+
+unsigned long power_ul(unsigned long x, unsigned long y)
+{
+    unsigned long result = 1;
+    while (y > 0)
+    {
+        result = result * x;
+        y--;
+    }
+    return (result);
+}

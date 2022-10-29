@@ -56,6 +56,17 @@ int main(int argc, char *argv[])
             result = minus(x, y);
         else if (argv[2][0] == '*' && argv[2][1] == '\0')
             result = asterisk(x, y);
+        
+        if (result.sign == 0)
+        {
+            printf("Divide by ZERO!\n");
+            return (0);
+        }
+        if (result.total_digit == NULL)
+        {
+            printf("Quotient Overflow Occurs.\n");
+            return (0);
+        }
 /*
         else if (argv[2][0] == '/' && argv[2][1] == '\0')
             result = slash(x, y);
