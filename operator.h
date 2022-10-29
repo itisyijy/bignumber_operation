@@ -12,6 +12,7 @@ bool checkOperator(char *operand);
 number setNumber(char *operand);
 
 unsigned long power_ul(unsigned long x, unsigned long y);
+void shift(int* number, int size);
 
 number plus(number x, number y);
 number minus(number x, number y);

@@ -63,11 +63,23 @@ number slash(number x, number y)
         tmp = tmp % power_ul(10, digits - i);
         i++;
     }
-
+    result.decimal_point = i;
+    
     // 소수부
-    while ()
+    while (i < RANGE)
     {
+        // 자리 한 칸 땡겨오는거
+        shift(y.total_digit, y.total_size);
+
+        // 빼면서 count 세 (음수 나올 때 까지만!!!, 만약에 0 나오면 즉시 break)
+        while ()
+        {
+
+        }
         
+        // count를 total_digit[i]에 넣어
+
+        i++;
     }
     return (result);
 }

@@ -101,3 +101,15 @@ unsigned long power_ul(unsigned long x, unsigned long y)
     }
     return (result);
 }
+
+void shift(int* number, int size)
+{
+	int i = 1;
+
+	while (i < size)
+	{
+		number[i - 1] = number[i];
+		number[i] = 0;
+		i++;
+	}
+}
