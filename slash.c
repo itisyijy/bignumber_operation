@@ -64,8 +64,24 @@ number slash(number x, number y)
         x = minus(x, y);
         y = refresh(y, x);
     }
-    while (i < RANGE)
+    else if (abs_compare(x.total_digit, y.total_digit, x.total_size) < 0 && x.total_size == y.total_size && x.decimal_point == y.decimal_point)
     {
+        int *tmp;
+        tmp = (int *)calloc(x.total_size + 1, sizeof(int));
+        for (int o = 1; o < x.total_size + 1; o++)
+            tmp[o] = x.total_digit[o - 1];
+        x.total_digit = tmp;
+        x.total_size++;
+        x.decimal_point++;
+        tmp = (int *)calloc(y.total_size + 1, sizeof(int));
+        for (int o = 1; o < y.total_size + 1; o++)
+            tmp[o] = y.total_digit[o - 1];
+        y.total_digit = tmp;
+        y.total_size++;
+        y.decimal_point++;
+    }
+    while (i < RANGE)
+    {      
         count = 0;
         shift(x.total_digit, x.total_size);
         while (minus(x, y).sign == 1)
