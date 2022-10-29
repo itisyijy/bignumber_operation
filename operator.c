@@ -148,7 +148,7 @@ void print_num(number num)
     {
         if (i == num.decimal_point)
             printf(".");
-        printf("%d", num.total_digit[i]);
+        printf("%d ", num.total_digit[i]);
         i++;
     }
 }
