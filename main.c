@@ -169,6 +169,9 @@ int main(int argc, char *argv[])
         
     }
     else
+    {
         printf("Few input argument.\n");
+        printf("Please, check your inputs.\n");
+    }
     return (0);
 }

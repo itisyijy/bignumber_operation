@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "operator.h"
 
 number asterisk(number x, number y)
@@ -11,7 +10,7 @@ number asterisk(number x, number y)
     result.sign = 1;
     if (x.sign * y.sign == -1)
         result.sign = -1;
-    result.total_size = x.total_size + y.total_size - 1;
+    result.total_size = x.total_size + y.total_size;
     result.decimal_point = x.decimal_point + y.decimal_point;
     result.total_digit = (int *)malloc(result.total_size * sizeof(int));
     for (int i = 0; i < result.total_size; i++)
@@ -28,14 +27,18 @@ number asterisk(number x, number y)
         {
             result.total_digit[i - (x.total_size - 1) + j] += (x.total_digit[j] * y.total_digit[k] + tmp) % 10;
             tmp = (x.total_digit[j] * y.total_digit[k] + tmp) / 10;
-            for (int i = 0; i < result.total_size; i++)
-            {
-                printf("%d ", result.total_digit[i]);
-            }
-            printf("\n");
             j--;
         }
         k--;
+        i--;
+    }
+
+    // rounding
+    i = result.total_size - 1;
+    while (i > 0)
+    {
+        result.total_digit[i - 1] += result.total_digit[i] / 10;
+        result.total_digit[i] = result.total_digit[i] % 10;
         i--;
     }
     return (result);
