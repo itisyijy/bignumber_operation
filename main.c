@@ -168,5 +168,7 @@ int main(int argc, char *argv[])
         printf("\nsign = %d\n", result.sign);
         
     }
+    else
+        printf("Few input argument.\n");
     return (0);
 }
