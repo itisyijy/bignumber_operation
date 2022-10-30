@@ -74,9 +74,14 @@ int main(int argc, char *argv[])
         print_num(result);
         printf("\n");
     }
-    else
+    else if (argc < 4)
     {
         printf("Few input argument.\n");
+        printf("Please, check your inputs.\n");
+    }
+    else if (argc > 4)
+    {
+        printf("Too Much input argument.\n");
         printf("Please, check your inputs.\n");
     }
     return (0);
