@@ -144,14 +144,18 @@ int isZero(number x)
 void print_num(number num)
 {
     int i = 0;
+    int end;
 
     if (num.sign == -1)
         printf("-");
     if (num.decimal_point == 0)
         printf("0");
-    while (num.total_digit[i] == 0 && i < num.decimal_point)
+    while (num.total_digit[i] == 0 && i < num.decimal_point - 1)
         i++;
-    while (i < num.total_size)
+    end = num.total_size - 1;
+    while (num.total_digit[end] == 0 && end > num.decimal_point)
+        end--;
+    while (i <= end)
     {
         if (i == num.decimal_point)
             printf(".");
